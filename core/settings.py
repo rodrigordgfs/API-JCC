@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'horario',
     'servico',
     'usuario',
+    'horario_agendado',
 ]
 
 REST_FRAMEWORK = {

@@ -19,11 +19,13 @@ from rest_framework import routers
 from horario.api.viewsets import HorarioViewSet
 from servico.api.viewsets import ServicoViewSet
 from usuario.api.viewsets import UsuarioViewSet
+from horario_agendado.api.viewsets import HorarioAgendadoViewSet
 
 routers = routers.DefaultRouter(trailing_slash=False)
 routers.register(r'api/v1/horario', HorarioViewSet, base_name='Horario')
 routers.register(r'api/v1/servico', ServicoViewSet, base_name='Servico')
 routers.register(r'api/v1/usuario', UsuarioViewSet, base_name='Usuario')
+routers.register(r'api/v1/horario-agendado', HorarioAgendadoViewSet, base_name='HorarioAgendado')
 
 urlpatterns = [
     path('', include(routers.urls)),
