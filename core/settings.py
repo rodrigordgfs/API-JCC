@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'horario',
     'servico',
+    'usuario',
 ]
 
 REST_FRAMEWORK = {
@@ -122,7 +123,7 @@ APPEND_SLASH = False
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC-3'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

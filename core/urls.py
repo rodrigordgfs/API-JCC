@@ -18,10 +18,12 @@ from django.urls import path, include
 from rest_framework import routers
 from horario.api.viewsets import HorarioViewSet
 from servico.api.viewsets import ServicoViewSet
+from usuario.api.viewsets import UsuarioViewSet
 
 routers = routers.DefaultRouter(trailing_slash=False)
 routers.register(r'api/v1/horario', HorarioViewSet, base_name='Horario')
 routers.register(r'api/v1/servico', ServicoViewSet, base_name='Servico')
+routers.register(r'api/v1/usuario', UsuarioViewSet, base_name='Usuario')
 
 urlpatterns = [
     path('', include(routers.urls)),
