@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'horario',
+    'servico',
 ]
 
 REST_FRAMEWORK = {
@@ -84,10 +85,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_jcc',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': 'db_jcc_adm',
+        'PASSWORD': 'r281197r',
+        'HOST': 'mysql669.umbler.com',
+        'PORT': 41890,
         'OPTIONS': {
             'sql_mode': 'traditional',
         }
@@ -121,7 +122,7 @@ APPEND_SLASH = False
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC-3'
 
 USE_I18N = True
 
