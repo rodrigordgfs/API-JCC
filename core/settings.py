@@ -87,15 +87,29 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_jcc',
-        'USER': 'db_jcc_adm',
-        'PASSWORD': 'r281197r',
-        'HOST': 'mysql669.umbler.com',
-        'PORT': 41890,
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': 3306,
         'OPTIONS': {
             'sql_mode': 'traditional',
         }
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'db_jcc',
+#         'USER': 'db_jcc_adm',
+#         'PASSWORD': 'r281197r',
+#         'HOST': 'mysql669.umbler.com',
+#         'PORT': 41890,
+#         'OPTIONS': {
+#             'sql_mode': 'traditional',
+#         }
+#     }
+# }
 
 
 # Password validation
