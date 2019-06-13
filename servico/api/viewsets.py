@@ -7,4 +7,4 @@ class ServicoViewSet(ModelViewSet):
     serializer_class = ServicoSerializer
 
     def get_queryset(self):
-        Servico.objects.filter(ativo=True)
+        return Servico.objects.filter(ativo=True)
