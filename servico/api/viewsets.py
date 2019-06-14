@@ -4,7 +4,8 @@ from .serializers import ServicoSerializer
 
 
 class ServicoViewSet(ModelViewSet):
+    queryset = Servico.objects.all()
     serializer_class = ServicoSerializer
 
-    def get_queryset(self):
-        return Servico.objects.filter(ativo=True)
+    # def get_queryset(self):
+    #     return Servico.objects.filter()

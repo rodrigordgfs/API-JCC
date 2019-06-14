@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "4311664b-86ee-45f3-a682-5364de01290d",
+		"name": "API JCC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "POST - Usuários",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "132rf8d9511e9623321af7764f64",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Rob Bourdon",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "https://lh4.googleusercontent.com/-iZELkwUHvnA/AAAAAAAAAAI/AAAAAAAAAIA/WEHWNKm-g98/s96-c/photo.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/usuario",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario"
+							]
+						},
+						"description": "Adciona um novo usuário ao banco de dados"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/usuario",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario"
+							]
+						},
+						"description": "Pega todos os usuários do Banco de Dados"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Usuários (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/usuario/4EgtKTGKOta8YjZSTRPiMjv0SH73",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario",
+								"4EgtKTGKOta8YjZSTRPiMjv0SH73"
+							]
+						},
+						"description": "Pega todos os usuários do Banco de Dados"
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Usuários",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "telefone",
+									"value": "51996236798",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/usuario/49XdKSojbCSBtIkA1pRAonW0xfG2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario",
+								"49XdKSojbCSBtIkA1pRAonW0xfG2"
+							]
+						},
+						"description": "Atualiza o telefone de um usuário no Banco de Dados"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4863af5c-1c32-4948-b007-d44d27553d0d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "889c4980-d1e7-4bce-99aa-f85df9c48f1f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Serviço",
+			"item": [
+				{
+					"name": "GET - Serviços",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/servico",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"servico"
+							]
+						},
+						"description": "Lista os serviços que estão no Banco de Dados"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Serviços (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/servico/3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"servico",
+								"3"
+							]
+						},
+						"description": "Lista os serviços que estão no Banco de Dados"
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Servico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "servico",
+									"value": "Corte Blindado",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "25.0",
+									"type": "text"
+								},
+								{
+									"key": "tempo",
+									"value": "35",
+									"type": "text"
+								},
+								{
+									"key": "icone",
+									"value": "https://img.icons8.com/ios-glyphs/72/separate-by-using-blank-sheets.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/servico",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"servico"
+							]
+						},
+						"description": "Adciona um novo servico ao banco de dados"
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Servico (Ativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ativo",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/servico/3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"servico",
+								"3"
+							]
+						},
+						"description": "Edita um servico no banco de dados"
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Servico (Desativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ativo",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/servico/3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"servico",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Servico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/servico/6",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"servico",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Horário",
+			"item": [
+				{
+					"name": "GET - Horario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/horario",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Horario (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/horario/7",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Horario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "horario",
+									"value": "23:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario-agendado",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario-agendado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Horario (Ativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ativo",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario/14",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Horario (Desativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ativo",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario/14",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Horario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "horario",
+									"value": "23:30:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Horario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/horario/8",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Horário Agendado",
+			"item": [
+				{
+					"name": "GET - Horário Agendado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Horário Agendado (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/horario-agendado/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario-agendado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Horário Agendado (Data)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "2019-05-07",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario-agendado/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario-agendado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Horário Agendado (Status)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "1",
+									"description": "Confirmado",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "2",
+									"description": "Cancelado",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario-agendado/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario-agendado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Horário Agendado (Confirmação)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "confirmado",
+									"value": "0",
+									"description": "False",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "confirmado",
+									"value": "1",
+									"description": "True",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario-agendado/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario-agendado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Horário Agendado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{localhost}}/horario-agendado/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario-agendado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Horário Agendado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "2019-08-09",
+									"type": "text"
+								},
+								{
+									"key": "criado",
+									"value": "2019-08-08",
+									"type": "text"
+								},
+								{
+									"key": "confirmado",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "horario",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "49XdKSojbCSBtIkA1pRAonW0xfG2",
+									"type": "text"
+								},
+								{
+									"key": "servico",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/horario-agendado",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"horario-agendado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "b8e86e5c-7cb5-4843-b09f-f85592f20fe2",
+			"key": "localhost",
+			"value": "http://127.0.0.1:8000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "81c9d1bd-f4d2-41d9-bfb0-192d55df2b36",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

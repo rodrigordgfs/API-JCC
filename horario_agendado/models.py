@@ -9,7 +9,7 @@ class HorarioAgendado(models.Model):
         db_table = 'tb_horario_agendado'
 
     id = models.AutoField(primary_key=True, editable=False, auto_created=True)
-    usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT)
+    usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, editable=False)
     data = models.DateField()
     horario = models.ForeignKey(Horario, on_delete=models.PROTECT)
     servico = models.ForeignKey(Servico, on_delete=models.PROTECT)

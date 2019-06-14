@@ -4,7 +4,8 @@ from .serializers import HorarioSerializer
 
 
 class HorarioViewSet(ModelViewSet):
+    queryset = Horario.objects.all().order_by('horario')
     serializer_class = HorarioSerializer
 
-    def get_queryset(self):
-        return Horario.objects.filter(ativo=True)
+    # def get_queryset(self):
+    #     return Horario.objects.filter(ativo=True)

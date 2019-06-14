@@ -5,4 +5,5 @@ from horario.models import Horario
 class HorarioSerializer(ModelSerializer):
     class Meta:
         model = Horario
-        fields = ('id', 'horario')
+        fields = ('id', 'horario', 'ativo')
+        ordering = ['horario']

@@ -5,7 +5,7 @@ class Horario(models.Model):
     class Meta:
         db_table = 'tb_horario'
 
-    id = models.IntegerField(primary_key=True, editable=False)
+    id = models.AutoField(primary_key=True, editable=False)
     horario = models.TimeField(unique=True)
     ativo = models.BooleanField(default=True)
 
