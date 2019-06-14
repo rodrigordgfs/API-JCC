@@ -7,7 +7,7 @@ class Usuario(models.Model):
 
     id = models.CharField(primary_key=True, max_length=30)
     nome = models.CharField(max_length=100)
-    imagem = models.URLField()
+    foto = models.URLField()
     telefone = models.CharField(max_length=11, blank=True, null=True)
 
     database = 'db_jcc'

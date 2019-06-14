@@ -12,7 +12,21 @@
 					"name": "POST - Usuários",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"description": "User",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -50,7 +64,21 @@
 					"name": "GET - Usuários",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"description": "User",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/usuario",
 							"host": [
@@ -68,7 +96,21 @@
 					"name": "GET - Usuários (ID)",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"description": "User",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/usuario/4EgtKTGKOta8YjZSTRPiMjv0SH73",
 							"host": [
@@ -87,7 +129,19 @@
 					"name": "PATCH - Usuários",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -143,7 +197,19 @@
 					"name": "GET - Serviços",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/servico",
 							"host": [
@@ -161,7 +227,19 @@
 					"name": "GET - Serviços (ID)",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/servico/3",
 							"host": [
@@ -180,7 +258,19 @@
 					"name": "POST - Servico",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -223,7 +313,19 @@
 					"name": "PATCH - Servico (Ativar)",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -252,7 +354,19 @@
 					"name": "PATCH - Servico (Desativar)",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -280,7 +394,19 @@
 					"name": "DELETE - Servico",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/servico/6",
 							"host": [
@@ -303,7 +429,19 @@
 					"name": "GET - Horario",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/horario",
 							"host": [
@@ -320,7 +458,19 @@
 					"name": "GET - Horario (ID)",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/horario/7",
 							"host": [
@@ -341,7 +491,19 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -368,7 +530,19 @@
 					"name": "PATCH - Horario (Ativar)",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -396,7 +570,19 @@
 					"name": "PATCH - Horario (Desativar)",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -424,7 +610,19 @@
 					"name": "POST - Horario",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -451,7 +649,19 @@
 					"name": "DELETE - Horario",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/horario/8",
 							"host": [
@@ -474,7 +684,19 @@
 					"name": "GET - Horário Agendado",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": ""
 						}
@@ -485,7 +707,19 @@
 					"name": "GET - Horário Agendado (ID)",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{localhost}}/horario-agendado/1",
 							"host": [
@@ -503,7 +737,19 @@
 					"name": "PATCH - Horário Agendado (Data)",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -531,7 +777,19 @@
 					"name": "PATCH - Horário Agendado (Status)",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -567,7 +825,19 @@
 					"name": "PATCH - Horário Agendado (Confirmação)",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -603,7 +873,19 @@
 					"name": "DELETE - Horário Agendado",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": []
@@ -625,7 +907,19 @@
 					"name": "POST - Horário Agendado",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token_admin}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token_user}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -679,17 +973,68 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Token Auth",
+			"item": [
+				{
+					"name": "Auth Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "usuario",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "r281197r",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api-token-auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api-token-auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"variable": [
 		{
-			"id": "b8e86e5c-7cb5-4843-b09f-f85592f20fe2",
+			"id": "4dea2f2c-2feb-4faa-b0fa-3b5a90e12248",
 			"key": "localhost",
 			"value": "http://127.0.0.1:8000/api/v1",
 			"type": "string"
 		},
 		{
-			"id": "81c9d1bd-f4d2-41d9-bfb0-192d55df2b36",
+			"id": "65c9f98f-626c-485e-b2a2-4c1072ec17e6",
 			"value": "",
 			"type": "string",
 			"disabled": true

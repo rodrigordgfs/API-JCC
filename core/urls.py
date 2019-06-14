@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token
 from horario.api.viewsets import HorarioViewSet
 from servico.api.viewsets import ServicoViewSet
 from usuario.api.viewsets import UsuarioViewSet
@@ -29,5 +30,6 @@ routers.register(r'api/v1/horario-agendado', HorarioAgendadoViewSet, base_name='
 
 urlpatterns = [
     path('', include(routers.urls)),
-    path('admin/', admin.site.urls),
+    path('api-token-auth', obtain_auth_token),
+    path('admin', admin.site.urls),
 ]

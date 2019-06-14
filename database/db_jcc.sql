@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 13-Jun-2019 às 12:20
+-- Generation Time: 14-Jun-2019 às 13:52
 -- Versão do servidor: 5.7.26
 -- versão do PHP: 7.2.18
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_jcc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `authtoken_token`
+--
+
+DROP TABLE IF EXISTS `authtoken_token`;
+CREATE TABLE IF NOT EXISTS `authtoken_token` (
+  `key` varchar(40) NOT NULL,
+  `created` datetime(6) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`key`),
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `authtoken_token`
+--
+
+INSERT INTO `authtoken_token` (`key`, `created`, `user_id`) VALUES
+('f1503d5ffa08185b7ec03ecc55bb6c3b21d96dc7', '2019-06-14 13:03:22.090559', 1),
+('a80e4b785c9c877c18953fd40cdcba98c10db70a', '2019-06-14 13:04:04.046556', 2);
 
 -- --------------------------------------------------------
 
@@ -68,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   KEY `auth_permission_content_type_id_2f476e4b` (`content_type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `auth_permission`
@@ -114,7 +137,11 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (37, 'Can add horario agendado', 10, 'add_horarioagendado'),
 (38, 'Can change horario agendado', 10, 'change_horarioagendado'),
 (39, 'Can delete horario agendado', 10, 'delete_horarioagendado'),
-(40, 'Can view horario agendado', 10, 'view_horarioagendado');
+(40, 'Can view horario agendado', 10, 'view_horarioagendado'),
+(41, 'Can add Token', 11, 'add_token'),
+(42, 'Can change Token', 11, 'change_token'),
+(43, 'Can delete Token', 11, 'delete_token'),
+(44, 'Can view Token', 11, 'view_token');
 
 -- --------------------------------------------------------
 
@@ -137,7 +164,15 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `auth_user`
+--
+
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$150000$LcIVYDnXMFEo$8iNKM7Zn4efyOlMXVe0q6PV+qkCzNNdiZFa+Po2SKrU=', '2019-06-14 12:52:43.832424', 1, 'admin', '', '', 'admin@admin.com', 1, 1, '2019-06-14 12:52:19.802804'),
+(2, 'pbkdf2_sha256$150000$qHOsO8Exkxzo$8yjIc4oJG/roC9zptgcHfpZIK639WcPp1Cq/+s5M4DQ=', NULL, 0, 'usuario', '', '', '', 0, 1, '2019-06-14 12:53:46.534617');
 
 -- --------------------------------------------------------
 
@@ -192,7 +227,16 @@ CREATE TABLE IF NOT EXISTS `django_admin_log` (
   PRIMARY KEY (`id`),
   KEY `django_admin_log_content_type_id_c4bce8eb` (`content_type_id`),
   KEY `django_admin_log_user_id_c564eba6` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `django_admin_log`
+--
+
+INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
+(1, '2019-06-14 12:53:46.768618', '2', 'usuario', 1, '[{\"added\": {}}]', 4, 1),
+(2, '2019-06-14 13:03:22.091561', 'f1503d5ffa08185b7ec03ecc55bb6c3b21d96dc7', 'f1503d5ffa08185b7ec03ecc55bb6c3b21d96dc7', 1, '[{\"added\": {}}]', 11, 1),
+(3, '2019-06-14 13:04:04.047557', 'a80e4b785c9c877c18953fd40cdcba98c10db70a', 'a80e4b785c9c877c18953fd40cdcba98c10db70a', 1, '[{\"added\": {}}]', 11, 1);
 
 -- --------------------------------------------------------
 
@@ -207,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `django_content_type`
@@ -223,7 +267,8 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (7, 'horario', 'horario'),
 (8, 'servico', 'servico'),
 (9, 'usuario', 'usuario'),
-(10, 'horario_agendado', 'horarioagendado');
+(10, 'horario_agendado', 'horarioagendado'),
+(11, 'authtoken', 'token');
 
 -- --------------------------------------------------------
 
@@ -238,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `django_migrations`
@@ -274,7 +319,12 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (27, 'horario_agendado', '0002_auto_20190612_1629', '2019-06-13 12:08:05.108673'),
 (28, 'horario_agendado', '0004_merge_20190613_0907', '2019-06-13 12:08:05.165512'),
 (29, 'horario_agendado', '0005_auto_20190613_0907', '2019-06-13 12:08:05.197508'),
-(30, 'sessions', '0001_initial', '2019-06-13 12:08:05.229507');
+(30, 'sessions', '0001_initial', '2019-06-13 12:08:05.229507'),
+(31, 'horario', '0002_auto_20190614_0901', '2019-06-14 12:01:32.427881'),
+(32, 'horario_agendado', '0006_auto_20190614_0952', '2019-06-14 12:52:34.317223'),
+(33, 'authtoken', '0001_initial', '2019-06-14 12:57:56.393097'),
+(34, 'authtoken', '0002_auto_20160226_1747', '2019-06-14 12:57:56.447110'),
+(35, 'usuario', '0003_auto_20190614_1038', '2019-06-14 13:38:44.667662');
 
 -- --------------------------------------------------------
 
@@ -291,6 +341,13 @@ CREATE TABLE IF NOT EXISTS `django_session` (
   KEY `django_session_expire_date_a5c62663` (`expire_date`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `django_session`
+--
+
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('ub1uxt1axlkrcbwh2kvk0b2oo6r51vxx', 'NzhlYmVmMWUyZmJhNjZjZmIxNzIyMzZhZThiMDdlMTE3M2QyMDc2ODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1NGRlODVlYzkyNmRkZjgyYWI5MDBiNjBkMjQxZDc3YTllODY3ZTg2In0=', '2019-06-28 12:52:43.835421');
+
 -- --------------------------------------------------------
 
 --
@@ -299,12 +356,12 @@ CREATE TABLE IF NOT EXISTS `django_session` (
 
 DROP TABLE IF EXISTS `tb_horario`;
 CREATE TABLE IF NOT EXISTS `tb_horario` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `horario` time(6) NOT NULL,
   `ativo` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `horario` (`horario`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_horario`
@@ -317,14 +374,14 @@ INSERT INTO `tb_horario` (`id`, `horario`, `ativo`) VALUES
 (4, '11:00:00.000000', 0),
 (5, '12:00:00.000000', 0),
 (6, '13:00:00.000000', 1),
-(7, '14:00:00.000000', 0),
-(8, '15:00:00.000000', 0),
 (9, '16:00:00.000000', 1),
 (10, '17:00:00.000000', 0),
 (11, '18:00:00.000000', 0),
 (12, '19:00:00.000000', 1),
 (13, '20:00:00.000000', 0),
-(14, '21:00:00.000000', 1);
+(14, '21:00:00.000000', 0),
+(15, '14:00:00.000000', 0),
+(16, '23:30:00.000000', 0);
 
 -- --------------------------------------------------------
 
@@ -353,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `tb_horario_agendado` (
 --
 
 INSERT INTO `tb_horario_agendado` (`id`, `data`, `criado`, `confirmado`, `status`, `horario_id`, `usuario_id`, `servico_id`) VALUES
-(1, '2019-06-13', '2019-06-11 00:00:00.000000', 1, 0, 4, '49XdKSojbCSBtIkA1pRAonW0xfG2', 3);
+(1, '2019-08-09', '2019-06-11 00:00:00.000000', 0, 2, 4, '49XdKSojbCSBtIkA1pRAonW0xfG2', 3);
 
 -- --------------------------------------------------------
 
@@ -371,14 +428,14 @@ CREATE TABLE IF NOT EXISTS `tb_servico` (
   `criado` datetime(6) NOT NULL,
   `ativo` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_servico`
 --
 
 INSERT INTO `tb_servico` (`id`, `servico`, `preco`, `tempo`, `icone`, `criado`, `ativo`) VALUES
-(3, 'Corte com Tesoura', '20.00', 30, 'https://img.icons8.com/ios-glyphs/72/separate-by-using-blank-sheets.png', '2019-06-12 12:17:15.578271', 1),
+(3, 'Corte Blindadão', '35.00', 45, 'https://img.icons8.com/ios-glyphs/72/separate-by-using-blank-sheets.png', '2019-06-14 11:51:27.147550', 0),
 (4, 'Corte com Máquina', '15.00', 25, 'https://img.icons8.com/ios-glyphs/72/separate-by-using-blank-sheets.png', '2019-06-12 12:17:30.082066', 1),
 (5, 'Corte Promoção', '10.00', 20, 'https://img.icons8.com/ios-glyphs/72/separate-by-using-blank-sheets.png', '2019-06-12 18:36:26.988955', 0);
 
@@ -392,7 +449,7 @@ DROP TABLE IF EXISTS `tb_usuario`;
 CREATE TABLE IF NOT EXISTS `tb_usuario` (
   `id` varchar(30) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `imagem` varchar(200) NOT NULL,
+  `foto` varchar(200) NOT NULL,
   `telefone` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -401,11 +458,13 @@ CREATE TABLE IF NOT EXISTS `tb_usuario` (
 -- Extraindo dados da tabela `tb_usuario`
 --
 
-INSERT INTO `tb_usuario` (`id`, `nome`, `imagem`, `telefone`) VALUES
-('49XdKSojbCSBtIkA1pRAonW0xfG2', 'RODRIGO VIEGAS RODRIGUES', 'https://lh4.googleusercontent.com/-iZELkwUHvnA/AAAAAAAAAAI/AAAAAAAAAIA/WEHWNKm-g98/s96-c/photo.jpg', ''),
+INSERT INTO `tb_usuario` (`id`, `nome`, `foto`, `telefone`) VALUES
+('49XdKSojbCSBtIkA1pRAonW0xfG2', 'RODRIGO VIEGAS RODRIGUES', 'https://lh4.googleusercontent.com/-iZELkwUHvnA/AAAAAAAAAAI/AAAAAAAAAIA/WEHWNKm-g98/s96-c/photo.jpg', '51996236798'),
 ('4EgtKTGKOta8YjZSTRPiMjv0SH73', 'ViiniciusMB', 'https://lh3.googleusercontent.com/-iK3cGpCQeWA/AAAAAAAAAAI/AAAAAAAANaw/2b0EgxJ8nWo/s96-c/photo.jpg', ''),
 ('HVDDfXA0AtfVZLpjLzYV1IIxmd53', 'Shinoda Labs', 'https://lh3.googleusercontent.com/-fqWvaNDUvyI/AAAAAAAAAAI/AAAAAAAAAAc/zS0TS2peer8/s96-c/photo.jpg', '51996236798'),
-('OQTMgByVjeQirr46gH4LhwglocF2', 'Rodrigo Shinoda', 'https://lh4.googleusercontent.com/-qdoSve4blqM/AAAAAAAAAAI/AAAAAAAAAIg/Y2cjU8CDRS4/s96-c/photo.jpg', '51996236798');
+('OQTMgByVjeQirr46gH4LhwglocF2', 'Rodrigo Shinoda', 'https://lh4.googleusercontent.com/-qdoSve4blqM/AAAAAAAAAAI/AAAAAAAAAIg/Y2cjU8CDRS4/s96-c/photo.jpg', '51996236798'),
+('093ef8e9511e9683526af7764f64', 'Mike Kowalsku', 'https://lh4.googleusercontent.com/-iZELkwUHvnA/AAAAAAAAAAI/AAAAAAAAAIA/WEHWNKm-g98/s96-c/photo.jpg', ''),
+('132rf8d9511e9623321af7764f64', 'Rob Bourdon', 'https://lh4.googleusercontent.com/-iZELkwUHvnA/AAAAAAAAAAI/AAAAAAAAAIA/WEHWNKm-g98/s96-c/photo.jpg', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
