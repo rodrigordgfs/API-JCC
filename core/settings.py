@@ -84,10 +84,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-default_dbulr = 'mysql://db_jcc_adm:r281197r@mysql669.umbler.com:41890/db_jcc'
-
+# DATABASE_ULR = 'mysql://USER:PASSWORD@HOST:PORT/NAME'
 DATABASES = {
-    'default': config('DATABASE_URL', default=default_dbulr, cast=dburl)
+    'default': config('DATABASE_URL', cast=dburl),
+    'OPTIONS': {
+        'sql_mode': 'traditional',
+    }
 }
 
 # Password validation
