@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'joao_carlos_cabeleireiro.wsgi.application'
 
 
 DATABASES = {
-    'default': config('CLEARDB_DATABASE_URL', cast=dburl),
+    'default': config('DATABASE_URL', cast=dburl),
     'OPTIONS': {
         'sql_mode': 'traditional',
     }
