@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://joao-carlos-cabeleireiro.herokuapp.com/', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['joao-carlos-cabeleireiro.herokuapp.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'joao_carlos_cabeleireiro.wsgi.application'
 
 
 DATABASES = {
-    'default': config('DATABASE_URL_L', cast=dburl),
+    'default': config('DATABASE_URL', cast=dburl),
     'OPTIONS': {
         'sql_mode': 'traditional',
     }
