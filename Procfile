@@ -1,1 +1,1 @@
-web: gunicorn joao_carlos_cabeleireiro --log-file -
+web: gunicorn core.wsgi --log-file -
