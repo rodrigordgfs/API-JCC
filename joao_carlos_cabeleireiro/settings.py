@@ -26,11 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-<<<<<<< HEAD:joao_carlos_cabeleireiro/settings.py
 ALLOWED_HOSTS = ['https://joao-carlos-cabeleireiro.herokuapp.com/', '127.0.0.1', 'localhost']
-=======
-ALLOWED_HOSTS = ['https://api-joao-carlos-cabeleireiro.herokuapp.com/', 'localhost:8000']
->>>>>>> acde0b6ef9fd044349080a235cc120db5741a38b:core/settings.py
 
 # Application definition
 
@@ -88,22 +84,14 @@ WSGI_APPLICATION = 'joao_carlos_cabeleireiro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASE_ULR = 'mysql://USER:PASSWORD@HOST:PORT/NAME'
+
 DATABASES = {
-<<<<<<< HEAD:joao_carlos_cabeleireiro/settings.py
     'default': config('DATABASE_URL_L', cast=dburl),
-=======
-    'default': config('DATABASE_URL', cast=dburl),
->>>>>>> acde0b6ef9fd044349080a235cc120db5741a38b:core/settings.py
     'OPTIONS': {
         'sql_mode': 'traditional',
     }
 }
 
-<<<<<<< HEAD:joao_carlos_cabeleireiro/settings.py
-
-=======
->>>>>>> acde0b6ef9fd044349080a235cc120db5741a38b:core/settings.py
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
